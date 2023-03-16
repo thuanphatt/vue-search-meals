@@ -14,11 +14,20 @@
         {{ letter }}
       </router-link>
     </div>
+    <pre>{{ ingredients }}</pre>
   </div>
 </template>
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 import store from "../store";
 
+import axiosClient from "../axiosClient";
+
+const ingredients = ref([]);
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+onMounted(async () => {
+  const res = await axiosClient.get("/list.php?i=list");
+  ingredients.value = res.data;
+  console.log(ingredients.value);
+});
 </script>
