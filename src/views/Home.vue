@@ -28,6 +28,5 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 onMounted(async () => {
   const res = await axiosClient.get("/list.php?i=list");
   ingredients.value = res.data;
-  console.log(ingredients.value);
 });
 </script>
