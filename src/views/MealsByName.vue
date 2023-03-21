@@ -8,8 +8,34 @@
       @change="searchMeals"
     />
   </div>
-  <div>
-    <pre>{{ meals }}</pre>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
+    <div
+      v-for="meal of meals"
+      :key="meal.idMeal"
+      class="bg-white shadow rounded-xl"
+    >
+      <img
+        :src="meal.strMealThumb"
+        :alt="meal.strMeal"
+        class="rounded-t-xl w-full h-48 object-cover"
+      />
+      <div class="px-3">
+        <h3 class="font-bold">{{ meal.strMeal }}</h3>
+        <p class="mb-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+          nulla autem saepe corporis numquam tempore? Quisquam facilis
+        </p>
+        <div>
+          <a
+            href="meal.strYoutube"
+            target="_black"
+            class="px-3 py-2 rounded border border-red-600"
+            >Youtube</a
+          >
+          <router-link to="/">View</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
