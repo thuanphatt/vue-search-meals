@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="p-8 pb-0 bg-transparent">
     <input
       type="text"
@@ -18,7 +18,6 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 import store from "../store";
-import YoutubeButton from "../components/YoutubeButton.vue";
 import MealItem from "../components/MealItem.vue";
 
 const keyword = ref("");
@@ -35,4 +34,4 @@ onMounted(() => {
   }
 });
 </script>
-<style lang=""></style>
+<style></style>
