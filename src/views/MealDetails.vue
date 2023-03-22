@@ -3,12 +3,17 @@
     <!-- <pre>{{ meal }}</pre> -->
     <h1 class="text-2xl font-bold mb-5">{{ meal.strMeal }}</h1>
     <img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-full" />
-    <div class="grid grid-cols-1 md:grid-cols-3 text-lg py-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 text-lg py-2 w-full">
       <div>
         <strong class="font-bold">Category :</strong> {{ meal.strCategory }}
       </div>
       <div><strong class="font-bold">Area :</strong> {{ meal.strArea }}</div>
-      <div><strong class="font-bold">Tags :</strong> {{ meal.strTags }}</div>
+      <div
+        class="whitespace-nowrap overflow-hidden overflow-ellipsis 2xl:w-fit"
+      >
+        <strong class="font-bold">Tags :</strong>
+        {{ meal.strTags }}
+      </div>
     </div>
   </div>
   <div class="px-8 py-3">
@@ -42,7 +47,7 @@
       <a
         :href="meal.strSource"
         target="_black"
-        class="ml-3 px-4 py-1 w-50 inline-flex items-center justify-between rounded text-blue-700"
+        class="ml-3 px-4 py-1 w-50 inline-flex items-center justify-between rounded text-blue-700 hover:text-blue-600 transition-colors"
       >
         <span class="m-0 p-0 mb[-4px]"> View Original Source </span>
       </a>
