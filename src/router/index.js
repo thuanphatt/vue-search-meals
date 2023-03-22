@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByName from "../views/MealsByName.vue";
+import MealDetails from "../views/MealDetails.vue";
 import MealsByIngredient from "../views/MealsByIngredient.vue";
 import DefaultLayOut from "../components/DefaultLayout.vue";
 import GuestLayout from "../components/GuestLayout.vue";
@@ -30,6 +31,11 @@ const routes = [
         path: "/letter/:letter?",
         name: "byLetter",
         component: MealsByLetter,
+      },
+      {
+        path: "/meal/:id",
+        name: "mealDetails",
+        component: MealDetails,
       },
     ],
   },

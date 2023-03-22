@@ -1,38 +1,40 @@
 <template lang="">
-  <div class="p-8">
+  <div class="p-8 pb-0">
     <input
       type="text"
-      :v-model="keyword"
+      v-model="keyword"
       class="rounded border-2 border-gray-200 w-full"
       placeholder="Search for meals"
       @change="searchMeals"
     />
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-8">
     <div
       v-for="meal of meals"
       :key="meal.idMeal"
       class="bg-white shadow rounded-xl"
     >
-      <img
-        :src="meal.strMealThumb"
-        :alt="meal.strMeal"
-        class="rounded-t-xl w-full h-48 object-cover"
-      />
-      <div class="px-3">
+      <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
+        <img
+          :src="meal.strMealThumb"
+          :alt="meal.strMeal"
+          class="rounded-t-xl w-full h-48 object-cover"
+        />
+      </router-link>
+
+      <div class="px-3 py-4">
         <h3 class="font-bold">{{ meal.strMeal }}</h3>
         <p class="mb-6">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
           nulla autem saepe corporis numquam tempore? Quisquam facilis
         </p>
-        <div>
-          <a
-            href="meal.strYoutube"
-            target="_black"
-            class="px-3 py-2 rounded border border-red-600"
-            >Youtube</a
-          >
-          <router-link to="/">View</router-link>
+        <div class="flex items-center justify-between">
+          <youtube-button :href="meal.strYoutube" />
+          <!-- <router-link
+            to="/"
+            class="px-3 py-2 rounded border-2 border-blue-600 bg-blue-600 text-white hover:bg-blue-500 transition-colors"
+            >View</router-link
+          > -->
         </div>
       </div>
     </div>
@@ -40,14 +42,24 @@
 </template>
 <script setup>
 import { computed } from "@vue/reactivity";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+
 import store from "../store";
+import YoutubeButton from "../components/YoutubeButton.vue";
 
 const keyword = ref("");
+const route = useRoute();
 const meals = computed(() => store.state.searchedMeals);
 
 const searchMeals = () => {
   store.dispatch("searchMeals", keyword.value);
 };
+onMounted(() => {
+  keyword.value = route.params.name;
+  if (keyword.value) {
+    searchMeals();
+  }
+});
 </script>
 <style lang=""></style>
