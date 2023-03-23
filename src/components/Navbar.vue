@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="bg-gray-100 h-full">
     <header class="bg-white shadow h-16 flex justify-between items-stretch">
       <router-link
@@ -21,7 +21,7 @@
           Meals By Letters
         </router-link>
         <router-link
-          :to="{ name: 'byIngredient' }"
+          :to="{ name: 'ingredients' }"
           class="inline-flex items-center transition-colors px-2 h-full hover:bg-blue-200"
         >
           Meals By Ingredients
@@ -31,4 +31,4 @@
   </div>
 </template>
 <script setup></script>
-<style lang=""></style>
+<style></style>

@@ -9,10 +9,7 @@
     </router-link>
   </div>
   <div>
-    <!-- <pre>{{ meals }}</pre> -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-8">
-      <meal-item v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-    </div>
+    <meals :meals="meals" />
   </div>
 </template>
 <script setup>
@@ -20,8 +17,7 @@ import { computed, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import store from "../store";
 
-import MealItem from "../components/MealItem.vue";
-
+import Meals from "../components/Meals.vue";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const route = useRoute();
 const meals = computed(() => store.state.mealsByLetter);
