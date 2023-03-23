@@ -1,18 +1,19 @@
 <template>
   <div class="p-8 pb-0 bg-transparent">
-    <h1 class="text-5xl font-bold mb-6 text-center text-[#0A2031]">
+    <h1 class="text-4xl font-bold mb-6 text-center text-[#87805E]">
       Search Meals By Name
     </h1>
     <input
       type="text"
       v-model="keyword"
-      class="rounded border-2 bg-white border-gray-200 w-full focus:border-[#0A2031]"
+      class="rounded border-2 bg-white border-gray-200 w-full focus:border-[#87805E] focus:ring-[#87805E]"
       placeholder="Search for meals"
       @change="searchMeals"
     />
   </div>
   <meals :meals="meals" />
 </template>
+
 <script setup>
 import { computed } from "@vue/reactivity";
 import { ref, onMounted } from "vue";
