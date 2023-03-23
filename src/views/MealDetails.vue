@@ -48,7 +48,7 @@
       <a
         :href="meal.strSource"
         target="_black"
-        class="ml-3 px-4 py-1 w-50 inline-flex items-center justify-between rounded text-blue-700 hover:text-blue-600 transition-colors"
+        class="ml-3 px-4 py-1 w-50 inline-flex items-center justify-between rounded text-[#0A2031] hover:text-blue-600 transition-colors"
       >
         <span class="m-0 p-0 mb[-4px]"> View Original Source </span>
       </a>

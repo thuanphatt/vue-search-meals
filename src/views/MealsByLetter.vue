@@ -18,6 +18,7 @@ import { useRoute } from "vue-router";
 import store from "../store";
 
 import Meals from "../components/Meals.vue";
+
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const route = useRoute();
 const meals = computed(() => store.state.mealsByLetter);

@@ -1,9 +1,12 @@
 <template>
   <div class="p-8 pb-0 bg-transparent">
+    <h1 class="text-5xl font-bold mb-6 text-center text-[#0A2031]">
+      Search Meals By Name
+    </h1>
     <input
       type="text"
       v-model="keyword"
-      class="rounded border-2 bg-white border-gray-200 w-full"
+      class="rounded border-2 bg-white border-gray-200 w-full focus:border-[#0A2031]"
       placeholder="Search for meals"
       @change="searchMeals"
     />
