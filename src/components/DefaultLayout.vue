@@ -6,12 +6,12 @@
         <router-view />
       </div>
     </main>
-    <footer />
+    <footer-app />
   </div>
 </template>
 <script setup>
 import Navbar from "./Navbar.vue";
-import Footer from "./Footer.vue";
+import FooterApp from "./FooterApp.vue";
 </script>
 
 <style scoped></style>
