@@ -60,8 +60,6 @@ import { ref } from "vue";
 import { useRoute } from "vue-router";
 import axiosClient from "../axiosClient";
 
-import YoutubeButton from "../components/YoutubeButton.vue";
-
 const meal = ref({});
 const route = useRoute();
 axiosClient.get(`lookup.php?i=${route.params.id}`).then(({ data }) => {

@@ -1,14 +1,8 @@
 <template>
   <footer class="bg-[#D6CDA4] absolute w-full bottom-0">
     <div class="mx-auto w-full container p-4 sm:p-3">
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-black sm:text-center">
-          <a
-            href="https://www.facebook.com/nthuanphatt/"
-            class="hover:underline"
-            >thuanphat</a
-          >
-        </span>
+      <div class="sm:flex sm:items-center sm:justify-between sm:flex-col">
+        <!-- <span class="text-sm text-black sm:text-center"> </span> -->
         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           <a
             href="https://www.facebook.com/nthuanphatt/"
